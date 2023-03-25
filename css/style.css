@@ -1749,7 +1749,7 @@ h3 {
 /* line 9, ../../Arafath/CL/December/231. Travel-02/HTML/scss/_footer.scss */
 .footer .footer_top {
   padding-top: 115px;
-  padding-bottom: 129px;
+  padding-bottom: 25px;
 }
 
 @media (max-width: 767px) {
