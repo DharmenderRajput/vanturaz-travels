@@ -885,14 +885,14 @@ h3 {
 @media (min-width: 992px) and (max-width: 1200px) {
   /* line 17, ../../Arafath/CL/December/231. Travel-02/HTML/scss/_header.scss */
   .header-area .main-header-area {
-    padding: 30px 20px;
+    padding: 20px 20px;
   }
 }
 
 @media (min-width: 1200px) and (max-width: 1500px) {
   /* line 17, ../../Arafath/CL/December/231. Travel-02/HTML/scss/_header.scss */
   .header-area .main-header-area {
-    padding: 30px 20px;
+    padding: 20px 20px;
   }
 }
 
