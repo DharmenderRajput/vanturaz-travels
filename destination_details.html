@@ -106,8 +106,8 @@
     <!-- header-end -->
     <div class="destination_banner_wrap overlay">
         <div class="destination_text text-center">
-            <h3>Saintmartine Iceland</h3>
-            <p>Pixel perfect design with awesome contents</p>
+            <h3 id="place-heading">Destination</h3>
+            <!-- <p>Pixel perfect design with awesome contents</p> -->
         </div>
     </div>
 
@@ -117,20 +117,7 @@
                 <div class="col-lg-8 col-md-9">
                     <div class="destination_info">
                         <h3>Description</h3>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing.</p>
-                        <p>Variations of passages of lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing.</p>
-                        <div class="single_destination">
-                            <h4>Day-01</h4>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
-                        </div>
-                        <div class="single_destination">
-                            <h4>Day-02</h4>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
-                        </div>
-                        <div class="single_destination">
-                            <h4>Day-03</h4>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
-                        </div>
+                        <div id="place-detail"></div>
                     </div>
                     <div class="bordered_1px"></div>
                     <div class="contact_join">
@@ -485,6 +472,38 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
              rightIcon: '<span class="fa fa-caret-down"></span>'
          }
         });
+    </script>
+
+    <script src="./data.js"></script>
+    <script>
+        const url = window.location.href;
+        var paramString = url.split('?')[1];
+        var queryString = new URLSearchParams(paramString);
+        var dest = '';
+        var place = '';
+
+        for (let pair of queryString.entries()) {
+            // extract destination
+            if (pair[0] === 'dest') {
+                dest = pair[1];
+            }
+
+            // extract place
+            if (pair[0] === 'place') {
+                place = pair[1];
+            }
+        }
+
+        // call details fetching function
+        var element = document.getElementById('place-detail');
+        if(dest !== '' && place !== ''){
+            const placeDetail = placeDetails(dest, place);
+            if(placeDetail != '' || typeof placeDetail != 'undefined'){
+                element.innerHTML = placeDetail
+                document.getElementById('place-heading').innerHTML=place;
+            }
+        }
+
     </script>
 </body>
 
