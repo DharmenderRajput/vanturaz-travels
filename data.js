@@ -235,9 +235,9 @@ function placesListing(devId, count = null, search = null) {
           const places = key.places.map((place, index) => {
             console.log('we are here');
             return (
-              '<div class="col-lg-4 col-md-6"> <div class="single_place"> <div class="thumb"> <img src="' +
+              '<div class="col-lg-4 col-md-6"> <div class="single_place"> <div class="thumb"> <a href="#"><img src="' +
               place.img +
-              '" alt=""> <a href="#" class="prise">$500</a> </div> <div class="place_info"> <a href="destination_details.html"><h3>' +
+              '" alt=""></a>  </div> <div class="place_info"> <a href="destination_details.html"><h3>' +
               place.name +
               '</h3></a> <p>' +
               key.destination +
@@ -254,9 +254,9 @@ function placesListing(devId, count = null, search = null) {
       }
 
       return (
-        '<div class="col-lg-4 col-md-6"> <div class="single_place"> <div class="thumb"> <img src="' +
+        '<div class="col-lg-4 col-md-6"> <div class="single_place"> <div class="thumb"> <a href="#"><img src="' +
         key.places[0].img +
-        '" alt=""> <a href="#" class="prise">$500</a> </div> <div class="place_info"> <a href="destination_details.html"><h3>' +
+        '" alt=""></a> </div> <div class="place_info"> <a href="destination_details.html"><h3>' +
         key.places[0].name +
         '</h3></a> <p>' +
         key.destination +
